@@ -16,7 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "benchmark": "*",
-    "chalk": "4.1.0",
+    "chalk": "4.1.2",
     "eslint": "7.20.0",
     "mime-db": "1.46.0",
     "mime-score": "1.2.0",

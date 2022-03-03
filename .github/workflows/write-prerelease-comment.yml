@@ -13,7 +13,7 @@ jobs:
     name: Write comment to the PR
     steps:
       - name: "Put PR and workflow ID on the environment"
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({

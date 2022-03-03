@@ -65,7 +65,7 @@
     "clipboardy": "^3.0.0",
     "cmd-shim": "^4.1.0",
     "command-exists": "^1.2.9",
-    "devtools-protocol": "^0.0.955664",
+    "devtools-protocol": "^0.0.975963",
     "execa": "^6.0.0",
     "faye-websocket": "^0.11.4",
     "finalhandler": "^1.1.2",

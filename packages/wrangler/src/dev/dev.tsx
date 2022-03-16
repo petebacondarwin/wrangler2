@@ -109,6 +109,8 @@ function Dev(props: DevProps): JSX.Element {
           name={props.name}
           bundle={bundle}
           format={props.entry.format}
+          compatibilityDate={props.compatibilityDate}
+          compatibilityFlags={props.compatibilityFlags}
           bindings={props.bindings}
           assetPaths={props.assetPaths}
           public={props.public}

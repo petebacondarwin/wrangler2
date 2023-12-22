@@ -437,6 +437,7 @@ function DevSession(props: DevSessionProps) {
 			queueConsumers={props.queueConsumers}
 			localProtocol={"http"} // hard-code for userworker, DevEnv-ProxyWorker now uses this prop value
 			localUpstream={props.localUpstream}
+			upstreamProtocol={props.upstreamProtocol}
 			inspect={props.inspect}
 			onReady={announceAndOnReady}
 			enablePagesAssetsServiceBinding={props.enablePagesAssetsServiceBinding}

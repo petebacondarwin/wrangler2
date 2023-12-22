@@ -35,6 +35,7 @@ export interface LocalProps {
 	crons: Config["triggers"]["crons"];
 	queueConsumers: Config["queues"]["consumers"];
 	localProtocol: "http" | "https";
+	upstreamProtocol: "http" | "https";
 	localUpstream: string | undefined;
 	inspect: boolean;
 	onReady:
@@ -90,6 +91,7 @@ export async function localPropsToConfigBundle(
 		queueConsumers: props.queueConsumers,
 		localProtocol: props.localProtocol,
 		localUpstream: props.localUpstream,
+		upstreamProtocol: props.upstreamProtocol,
 		inspect: props.inspect,
 		serviceBindings,
 	};
@@ -172,7 +174,7 @@ function useLocalWorker(props: LocalProps) {
 						pathname: `/core:user:${props.name ?? DEFAULT_WORKER_NAME}`,
 					},
 					userWorkerInnerUrlOverrides: {
-						protocol: props.localProtocol,
+						protocol: props.upstreamProtocol,
 						hostname: props.localUpstream,
 						port: props.localUpstream ? "" : undefined, // `localUpstream` was essentially `host`, not `hostname`, so if it was set delete the `port`
 					},

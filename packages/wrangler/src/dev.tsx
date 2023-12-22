@@ -768,9 +768,9 @@ async function validateDevServerSettings(
 	}
 	const upstreamProtocol =
 		args.upstreamProtocol ?? config.dev.upstream_protocol;
-	if (upstreamProtocol === "http") {
+	if (upstreamProtocol === "http" && !args.local) {
 		logger.warn(
-			"Setting upstream-protocol to http is not currently implemented.\n" +
+			"Setting upstream-protocol to http is not currently supported for remote mode.\n" +
 				"If this is required in your project, please add your use case to the following issue:\n" +
 				"https://github.com/cloudflare/workers-sdk/issues/583."
 		);

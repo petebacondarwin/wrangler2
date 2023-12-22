@@ -21,9 +21,11 @@ describe("'wrangler dev' correctly renders pages", () => {
 	});
 
 	it("renders ", async ({ expect }) => {
+		// Note that the local protocol defaults to http
 		const response = await fetch(`http://${ip}:${port}/`);
 		const text = await response.text();
-		expect(text).toContain(`http://${ip}:${port}/`);
+		// Note that the upstream protocol defaults to https
+		expect(text).toContain(`URL = https://${ip}:${port}/`);
 
 		// Ensure `console.log()`s from startup and requests are shown
 		const output = getOutput();

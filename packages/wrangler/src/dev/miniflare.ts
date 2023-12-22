@@ -110,6 +110,7 @@ export interface ConfigBundle {
 	queueConsumers: Config["queues"]["consumers"];
 	localProtocol: "http" | "https";
 	localUpstream: string | undefined;
+	upstreamProtocol: "http" | "https";
 	inspect: boolean;
 	serviceBindings: Record<string, (_request: Request) => Promise<Response>>;
 }
@@ -530,7 +531,9 @@ async function buildMiniflareOptions(
 
 	const upstream =
 		typeof config.localUpstream === "string"
-			? `${config.localProtocol}://${config.localUpstream}`
+			? `${config.upstreamProtocol ?? config.localProtocol}://${
+					config.localUpstream
+			  }`
 			: undefined;
 
 	const sourceOptions = await buildSourceOptions(config);
